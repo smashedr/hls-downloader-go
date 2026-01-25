@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: "3"
+
+vars:
+  NAME: bup
+  PATH: dist
+  ARGS: "-ldflags='-s -w'"
+
+env:
+  CGO_ENABLED: 0
+
+tasks:
+  goup:
+    cmd: |
+      go get -u
+      go mod tidy
+
+  lint:
+    desc: Lint
+    cmd: |
+      prettier --check .
+      yamllint -c .github/yamllint.yaml .
+      golangci-lint run
+
+  clean:
+    desc: Clean
+    cmd: rm -rf {{.PATH}}
+
+  build:
+    desc: GoReleaser Build
+    cmd: goreleaser build --snapshot --clean --single-target
+
+  build-all:
+    desc: GoReleaser Build
+    cmd: goreleaser build --snapshot --clean
+
+  release:
+    desc: GoReleaser Release
+    cmd: goreleaser release --snapshot --clean
+
+  #docs:
+  #  desc: Zensical Docs
+  #  cmd: |
+  #    rm -rf .cache
+  #    zensical serve --open
+
+  #pathmgr:
+  #  desc: Download PathMgr
+  #  cmd: |
+  #    wget https://github.com/Bill-Stewart/PathMgr/releases/download/v2.0.0/PathMgr-2.0.0.zip -O dist/pathmgr.zip
+  #    unzip dist/pathmgr.zip -d dist/PathMgr
+
+  #prepare:
+  #  desc: Prep Inno
+  #  env:
+  #    GOOS: windows
+  #  cmd: |
+  #    #GOARCH=386 goreleaser build --snapshot --single-target
+  #    #GOARCH=amd64 goreleaser build --snapshot --single-target
+  #    task build:windows:386
+  #    task build:windows:amd64
+  #    mkdir -p dist/i386
+  #    mkdir -p dist/x86_64
+  #    cp -f dist/bup-windows-amd64.exe dist/i386/bup.exe
+  #    cp -f dist/bup-windows-amd64.exe dist/x86_64/bup.exe
+
+  #inno:
+  #  aliases: [setup]
+  #  desc: Inno Setup
+  #  cmd: iscc.exe installer.iss

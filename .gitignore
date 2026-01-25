@@ -1,0 +1,13 @@
+# Generic
+.idea/
+*.iml
+.vscode/
+.*cache*
+node_modules/
+build/
+dist/
+out/
+# App
+site/
+*.log
+*.txt
