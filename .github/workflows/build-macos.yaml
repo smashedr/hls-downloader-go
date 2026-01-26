@@ -18,6 +18,11 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v6
 
+      - name: "Install task"
+        uses: jaxxstorm/action-install-gh-release@v1.10.0
+        with:
+          repo: go-task/task
+
       - name: "Download Artifact"
         if: ${{ !github.event.release.prerelease }}
         uses: actions/download-artifact@v7
@@ -25,8 +30,10 @@ jobs:
           name: client
           path: dist/client
 
-      - name: "Generate Manifest"
-        run: python assets/manifest.py
+      - name: "Generate Assets"
+        run: |
+          task manifest
+          task icon
 
       - name: "Debug Artifact"
         continue-on-error: true
