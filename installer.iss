@@ -25,7 +25,7 @@ DisableProgramGroupPage=yes
 InfoBeforeFile=assets\pre-install.rtf
 InfoAfterFile=assets\post-install.rtf
 
-OutputBaseFilename=installer
+OutputBaseFilename=windows-installer
 OutputDir=out
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog

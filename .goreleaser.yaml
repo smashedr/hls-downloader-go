@@ -1,36 +1,30 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
-
-# The lines below are called `modelines`. See `:help modeline`
-# Feel free to remove those if you don't want/need to use them.
-# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# GoReleaser https://goreleaser.com/customization/
+# $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
 
 version: 2
 
 # https://goreleaser.com/customization/project/
 project_name: client
-
 dist: dist/client
 
 before:
   hooks:
-    # You may remove this if you don't use go modules.
     - go mod tidy
-    # you may remove this if you don't need go generate
-    #- go generate ./...
 
 # https://goreleaser.com/customization/builds/go/
 builds:
   - env:
       - CGO_ENABLED=0
     targets:
-      - windows_amd64_v1
-      - windows_386
-      - linux_amd64_v1
-      - linux_arm64
-      - darwin_arm64
+      - windows_amd64_v1 # win 64 intel
+      - windows_386 # win 32 intel
+      - linux_amd64_v1 # linux 64 intel
+      - linux_arm64 # linux 64 arm
+      - darwin_amd64 # mac 64 intel
+      - darwin_arm64 # mac 64 arm
 
+# https://goreleaser.com/customization/archive/
 archives:
   - formats: [tar.gz]
     # this name template makes the OS and Arch compatible with the results of `uname`.
@@ -45,6 +39,14 @@ archives:
     format_overrides:
       - goos: windows
         formats: [zip]
+
+# https://goreleaser.com/customization/release/
+release:
+  # You can disable this pipe in order to not create the release on any SCM.
+  # Keep in mind that this might also break things that depend on the release
+  # URL, for instance, homebrew taps.
+  disable: true
+  #replace_existing_artifacts: true
 
 #dockers_v2:
 #  - images:
@@ -78,9 +80,6 @@ archives:
 #      https://smashedr.github.io/bup/
 #
 #    skip_upload: true
-
-#release:
-#  replace_existing_artifacts: true
 
 #changelog:
 #  sort: asc

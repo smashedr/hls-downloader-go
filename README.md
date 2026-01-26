@@ -19,6 +19,10 @@ A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downlo
 - Original Client: https://github.com/cssnr/hls-downloader-client
 - Web Extension: https://github.com/cssnr/hls-video-downloader
 
+> [!WARNING]  
+> This project is still in development but somewhat functional.  
+> You must **uninstall** the original client before installing.
+
 # Contributing
 
 If you would like to submit a PR, please review the [CONTRIBUTING.md](#contributing-ov-file).
