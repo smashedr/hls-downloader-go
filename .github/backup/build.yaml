@@ -1,4 +1,4 @@
-name: "macOS"
+name: "Build"
 
 on:
   workflow_call:
@@ -10,13 +10,32 @@ on:
 
 jobs:
   build:
-    name: "Build"
-    runs-on: macos-15-intel
+    name: "Build - ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          #- os: macos-latest
+          #  name: macos-arm64
+          - os: macos-15-intel
+            name: macos-amd64
+          - os: ubuntu-latest
+            name: linux-amd64
+          #- os: ubuntu-24.04-arm
+          #  name: linux-arm64
+          - os: windows-latest
+            name: windows-amd64
 
     steps:
       - name: "Checkout"
         uses: actions/checkout@v6
+
+      - name: "Install task"
+        uses: jaxxstorm/action-install-gh-release@v2.1.0
+        with:
+          repo: go-task/task
 
       - name: "Download Artifact"
         if: ${{ !github.event.release.prerelease }}
@@ -33,17 +52,8 @@ jobs:
         shell: bash
         run: ls -lAhR dist
 
-      - name: "Setup Packages"
-        # noinspection HttpUrlsUsage
-        run: |
-          curl http://s.sudre.free.fr/Software/files/Packages.dmg -o Packages.dmg
-          hdiutil attach Packages.dmg
-          sudo installer -pkg "/Volumes/Packages 1.2.10/Install Packages.pkg" -target /
-          hdiutil detach "/Volumes/Packages 1.2.10"
-
-      - name: "macOS Packages"
-        run: |
-          bash assets/build-mac.sh
+      - name: "Build Package"
+        run: task build
 
       - name: "Debug Output"
         continue-on-error: true

@@ -23,6 +23,10 @@ mkdir -p "${DEST}/chrome"
 cp -f "${DEST}/manifest-firefox.json" "${DEST}/firefox/${APP_NAME}.json"
 cp -f "${DEST}/manifest-chrome.json" "${DEST}/chrome/${APP_NAME}.json"
 
+echo "::group::Debug - DEST: ${DEST}"
+tree "${DEST}" || ls -lAhR "${DEST}"
+echo "::endgroup::"
+
 packagesbuild assets/macos.pkgproj --package-version "${VERSION}"
 mkdir -p out
 mv "build/hls-downloader-client.pkg" "out/macos-installer.pkg"

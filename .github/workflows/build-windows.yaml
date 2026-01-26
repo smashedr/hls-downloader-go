@@ -38,7 +38,7 @@ jobs:
           version: ${{ inputs.version }}
         run: |
           echo "Building Version: $Env:version"
-          iscc.exe "/DMyAppVersion=$Env:version" client.iss
+          iscc.exe "/DMyAppVersion=$Env:version" assets\installer.iss
 
       - name: "Debug Output"
         continue-on-error: true
