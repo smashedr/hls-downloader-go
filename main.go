@@ -88,7 +88,7 @@ func showFileInExplorer(filePath string) error {
 }
 
 func sanitizeFilename(filename string) string {
-	invalid := []string{"/", "\\", ":", "*", "?", "\"", "<", ">", "|"}
+	invalid := []string{"/", "\\", ":", "*", "?", "\"", "<", ">", "|", " "}
 	result := filename
 	for _, char := range invalid {
 		result = strings.ReplaceAll(result, char, "_")

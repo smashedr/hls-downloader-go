@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: "3"
 
-vars:
-  NAME: bup
-  PATH: dist
-  ARGS: "-ldflags='-s -w'"
+#vars:
+#  NAME: bup
+#  PATH: dist
+#  ARGS: "-ldflags='-s -w'"
 
 env:
   CGO_ENABLED: 0
@@ -28,15 +28,23 @@ tasks:
 
   build:
     desc: GoReleaser Build
-    cmd: goreleaser build --snapshot --clean --single-target
-
-  build-all:
-    desc: GoReleaser Build
     cmd: goreleaser build --snapshot --clean
 
   release:
     desc: GoReleaser Release
     cmd: goreleaser release --snapshot --clean
+
+  manifest:
+    desc: Generate Manifest
+    cmd: python manifest.py
+
+  icon:
+    cmd: convert assets/logo.png -define icon:auto-resize=256,128,96,64,48,32,16 -compress None dist/favicon.ico
+
+  inno:
+    aliases: [setup]
+    desc: Inno Setup
+    cmd: iscc.exe installer.iss
 
   #docs:
   #  desc: Zensical Docs
@@ -63,8 +71,3 @@ tasks:
   #    mkdir -p dist/x86_64
   #    cp -f dist/bup-windows-amd64.exe dist/i386/bup.exe
   #    cp -f dist/bup-windows-amd64.exe dist/x86_64/bup.exe
-
-  #inno:
-  #  aliases: [setup]
-  #  desc: Inno Setup
-  #  cmd: iscc.exe installer.iss
