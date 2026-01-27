@@ -211,8 +211,6 @@ func main() {
 		defer func() { _ = logFile.Close() }()
 		log.SetOutput(logFile)
 	}
-	//cwd, _ := os.Getwd()
-	//log.Printf("cwd: %v\n", cwd)
 
 	// Read the message
 	message, err := readMessage()

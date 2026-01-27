@@ -27,9 +27,9 @@
 - [Support](#Support)
 - [Contributing](#Contributing)
 
-HLS Video Downloader Client. Rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
+HLS Video Downloader Client. A Rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
 
-- Web Extension: https://github.com/cssnr/hls-video-downloader
+- Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
 
 A Web Extension Native Messaging Client written in Go with installers for most platforms.
 
@@ -45,15 +45,15 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 
 See below for additional details on each system.
 
-| System      |                                                                           Arch                                                                            | Status |
-| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   |
-| **Windows** |                                               [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                |   ⛔   |
-| **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ✅   |
-| **Linux**   |                                                [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
-| **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ✅   |
-| **macOS**   |                                                [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
+| System      |                                                                           Arch                                                                            | Status | Details     |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: | ----------- |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   | Finished    |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   | Finished    |
+| **Windows** |                                               [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                |   ⛔   | Not Planned |
+| **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ☑️   | Working     |
+| **Linux**   |                                                [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   | Planned     |
+| **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ☑️   | Working     |
+| **macOS**   |                                                [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   | Planned     |
 
 ### Windows 🪟
 
