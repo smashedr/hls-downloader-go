@@ -60,4 +60,4 @@ echo "Building: ${PACKAGE}"
 dpkg-deb --build "${PACKAGE}"
 
 mkdir out
-mv "${PACKAGE}.deb" "out/install-linux.deb"
+mv "${PACKAGE}.deb" "out/linux-installer.deb"
