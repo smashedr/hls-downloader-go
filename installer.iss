@@ -29,7 +29,7 @@ OutputBaseFilename=windows-installer
 OutputDir=out
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-SetupIconFile=dist\favicon.ico
+SetupIconFile=assets\favicon.ico
 UninstallDisplayIcon={uninstallexe}
 WizardStyle=modern dynamic
 

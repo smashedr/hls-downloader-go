@@ -34,7 +34,7 @@ mkdir -p "${chrome}"
 mkdir -p "${chromium}"
 mkdir -p "${firefox}"
 
-cp -f "dist/client_linux_amd64_v1/client" "${PACKAGE}/opt/${APP_NAME}/client"
+cp -f "dist/client/client_linux_amd64_v1/client" "${PACKAGE}/opt/${APP_NAME}/client"
 chmod +x "${PACKAGE}/opt/${APP_NAME}/client"
 touch "${PACKAGE}/opt/${APP_NAME}/log.txt"
 chmod g+w "${PACKAGE}/opt/${APP_NAME}/log.txt"
