@@ -43,6 +43,14 @@ jobs:
           name: client
           path: dist/client
 
+      - name: "DEBUG task"
+        if: ${{ runner.os == 'Windows' }}
+        shell: bash
+        run: |
+          which task
+          task --list
+          task manifest
+
       - name: "Generate Assets"
         run: |
           task manifest
