@@ -114,13 +114,29 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 	log.Printf("url: %v\n", url)
 
 	// get ffmpeg
-	cwd, _ := os.Getwd()
-	log.Printf("cwd: %v\n", cwd)
-	fname, err := exec.LookPath("./ffmpeg")
-	if err != nil {
-		return "", fmt.Errorf("error finding ffmpeg: %w", err)
+	//cwd, _ := os.Getwd()
+	//log.Printf("cwd: %v\n", cwd)
+	//fname, err := exec.LookPath("./ffmpeg")
+	//if err != nil {
+	//	return "", fmt.Errorf("error finding ffmpeg: %w", err)
+	//}
+	//log.Printf("fname: %+v\n", fname)
+	exeName := "ffmpeg"
+	if runtime.GOOS == "windows" {
+		exeName = "ffmpeg.exe"
 	}
-	log.Printf("fname: %+v\n", fname)
+	log.Printf("exeName: %s\n", exeName)
+	var ffmpegPath string
+	if _, err := os.Stat(exeName); err == nil {
+		ffmpegPath, _ = filepath.Abs(exeName)
+	} else {
+		path, err := exec.LookPath("ffmpeg")
+		if err != nil {
+			return "", fmt.Errorf("error finding ffmpeg: %w", err)
+		}
+		ffmpegPath = path
+	}
+	log.Printf("ffmpegPath: %s\n", ffmpegPath)
 
 	// get directory
 	home, _ := os.UserHomeDir()
@@ -165,7 +181,7 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 
 	// process download
 	args := []string{"-i", url, "-c", "copy", "-bsf:a", "aac_adtstoasc", path}
-	cmd := exec.Command("./ffmpeg", args...)
+	cmd := exec.Command(ffmpegPath, args...)
 	if err := cmd.Run(); err != nil {
 		log.Printf("err: %+v\n", err)
 		return "", err
