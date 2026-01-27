@@ -28,6 +28,6 @@ echo "::group::Debug - DEST: ${DEST}"
 tree "${DEST}" || ls -lAhR "${DEST}"
 echo "::endgroup::"
 
-packagesbuild macos.pkgproj --package-version "${VERSION}"
+packagesbuild installer.pkgproj --package-version "${VERSION}"
 mkdir -p out
 mv "build/hls-downloader-client.pkg" "out/macos-installer.pkg"

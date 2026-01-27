@@ -1,6 +1,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/smashedr/hls-downloader-go?logo=github)](https://github.com/smashedr/hls-downloader-go/releases/latest)
 [![GitHub Downloads](https://img.shields.io/github/downloads/smashedr/hls-downloader-go/total?logo=rolldown&logoColor=white)](https://github.com/smashedr/hls-downloader-go/releases)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/smashedr/hls-downloader-go?logo=go&logoColor=white&label=go)](https://github.com/smashedr/hls-downloader-go/blob/master/go.mod)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=smashedr_hls-downloader-go&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=smashedr_hls-downloader-go)
 [![Workflow Lint](https://img.shields.io/github/actions/workflow/status/smashedr/hls-downloader-go/lint.yaml?logo=testcafe&logoColor=white&label=lint)](https://github.com/smashedr/hls-downloader-go/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/smashedr/hls-downloader-go?logo=listenhub&label=updated)](https://github.com/smashedr/hls-downloader-go/pulse)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/smashedr/hls-downloader-go?logo=buffer&label=repo%20size)](https://github.com/smashedr/hls-downloader-go?tab=readme-ov-file#readme)
@@ -26,9 +27,11 @@
 - [Support](#Support)
 - [Contributing](#Contributing)
 
-A rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
+HLS Video Downloader Client. A Rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
 
-- Web Extension: https://github.com/cssnr/hls-video-downloader
+- Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
+
+A Web Extension Native Messaging Client written in Go with installers for most platforms.
 
 > [!IMPORTANT]  
 > This project is still in development but functional.  
@@ -42,15 +45,15 @@ A rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-download
 
 See below for additional details on each system.
 
-| System      |                                                                           Arch                                                                            | Status |
-| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   |
-| **Windows** |                                               [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                |   ⛔   |
-| **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ✅   |
-| **Linux**   |                                                [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
-| **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ✅   |
-| **macOS**   |                                                [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
+| System      |                                                                           Arch                                                                            | Status | Details     |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: | ----------- |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   | Finished    |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   | Finished    |
+| **Windows** |                                               [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                |   ⛔   | Not Planned |
+| **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ☑️   | Working     |
+| **Linux**   |                                                [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   | Planned     |
+| **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ☑️   | Working     |
+| **macOS**   |                                                [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   | Planned     |
 
 ### Windows 🪟
 

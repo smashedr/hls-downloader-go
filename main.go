@@ -122,9 +122,10 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 	//}
 	//log.Printf("fname: %+v\n", fname)
 	exeName := "ffmpeg"
-	if runtime.GOOS == "windows" {
+	switch runtime.GOOS {
+	case "windows":
 		exeName = "ffmpeg.exe"
-	} else if runtime.GOOS == "darwin" {
+	case "darwin":
 		newPaths := []string{
 			"/usr/local/bin",
 			"/opt/homebrew/bin",
@@ -210,8 +211,6 @@ func main() {
 		defer func() { _ = logFile.Close() }()
 		log.SetOutput(logFile)
 	}
-	//cwd, _ := os.Getwd()
-	//log.Printf("cwd: %v\n", cwd)
 
 	// Read the message
 	message, err := readMessage()
