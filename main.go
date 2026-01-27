@@ -125,9 +125,16 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 	if runtime.GOOS == "windows" {
 		exeName = "ffmpeg.exe"
 	} else if runtime.GOOS == "darwin" {
+		newPaths := []string{
+			"/usr/local/bin",
+			"/opt/homebrew/bin",
+			"/opt/local/bin",
+			"/sw/bin",
+			filepath.Join(os.Getenv("HOME"), "bin"),
+		}
 		currentPath := os.Getenv("PATH")
-		newPath := ":/usr/local/bin:/opt/homebrew/bin:/opt/local/bin:/sw/bin:" + os.Getenv("HOME") + "/bin"
-		_ = os.Setenv("PATH", currentPath+newPath)
+		newPath := strings.Join(newPaths, ":")
+		_ = os.Setenv("PATH", currentPath+":"+newPath)
 	}
 	log.Printf("PATH: %s\n", os.Getenv("PATH"))
 	log.Printf("exeName: %s\n", exeName)
