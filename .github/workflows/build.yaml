@@ -44,16 +44,37 @@ jobs:
           name: client
           path: dist/client
 
-      - name: "Generate Manifest"
-        run: python assets/manifest.py
+      - name: "Generate Assets"
+        run: |
+          task manifest
 
       - name: "Debug Artifact"
         continue-on-error: true
         shell: bash
         run: ls -lAhR dist
 
-      - name: "Build Package"
-        run: task build
+      - name: "Build Windows"
+        if: ${{ runner.os == 'Windows' }}
+        env:
+          version: ${{ inputs.version }}
+        run: |
+          echo "Building Version: $Env:version"
+          iscc.exe "/DMyAppVersion=$Env:version" installer.iss
+
+      - name: "Build Linux"
+        if: ${{ runner.os == 'Linux' }}
+        run: |
+          bash assets/build-linux.sh
+
+      - name: "Build macOS"
+        if: ${{ runner.os == 'macOS' }}
+        # noinspection HttpUrlsUsage
+        run: |
+          curl http://s.sudre.free.fr/Software/files/Packages.dmg -o Packages.dmg
+          hdiutil attach Packages.dmg
+          sudo installer -pkg "/Volumes/Packages 1.2.10/Install Packages.pkg" -target /
+          hdiutil detach "/Volumes/Packages 1.2.10"
+          bash assets/build-mac.sh
 
       - name: "Debug Output"
         continue-on-error: true

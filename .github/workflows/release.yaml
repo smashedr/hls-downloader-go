@@ -70,29 +70,9 @@ jobs:
           name: client
           path: dist/client
 
-  windows:
-    name: "Windows"
-    uses: ./.github/workflows/build-windows.yaml
-    needs: [build]
-    secrets: inherit
-    with:
-      version: ${{ github.ref_name }}
-    permissions:
-      contents: write
-
-  linux:
-    name: "Linux"
-    uses: ./.github/workflows/build-linux.yaml
-    needs: [build]
-    secrets: inherit
-    with:
-      version: ${{ github.ref_name }}
-    permissions:
-      contents: write
-
-  macos:
-    name: "macOS"
-    uses: ./.github/workflows/build-macos.yaml
+  package:
+    name: "Package"
+    uses: ./.github/workflows/build.yaml
     needs: [build]
     secrets: inherit
     with:
@@ -105,7 +85,7 @@ jobs:
     if: ${{ github.event_name == 'release' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [windows, linux, macos]
+    needs: [package]
 
     steps:
       #- name: "Create App Token"
