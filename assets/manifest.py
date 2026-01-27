@@ -21,12 +21,10 @@ output_dir = "dist"
 name_firefox = "manifest-firefox.json"
 name_chrome = "manifest-chrome.json"
 
-system = platform.system()
-if system == "Windows":
+system = platform.system().lower()
+if system in ["windows"]:
     client_path = "client.exe"
-elif system == "Linux":
-    client_path = f'/opt/{data["name"]}/client.py'
-elif system == "Darwin":
+elif system in ["linux", "darwin", "macos"]:
     client_path = f'/opt/{data["name"]}/client'
 else:
     raise ValueError(f"Unsupported System: {system}")
@@ -62,3 +60,15 @@ with open(output_firefox, "w", encoding="utf-8") as f:
 print(f"Writing Chrome to: {output_chrome}\n{chrome}")
 with open(output_chrome, "w", encoding="utf-8") as f:
     f.write(chrome)
+
+
+# if __name__ == "__main__":
+# parser = argparse.ArgumentParser(description="example: %(prog)s [name] -- --script-args", add_help=False)
+# parser.add_argument("-c", "--client", type=str, default=None, help="Client Path")
+# parser.add_argument("-s", "--system", type=str, default=None, help="System Platform")
+# args, remaining = parser.parse_known_args()
+# if len(sys.argv) == 2:
+#     system = sys.argv[1].lower().strip()
+# sys.argv.pop(0)
+# system = next(iter(sys.argv), platform.system()).lower()
+# print(f"system: {system}")
