@@ -8,6 +8,11 @@ PKG_NAME="hls-downloader-client"
 SOURCE="dist"
 VERSION="0.0.1"
 
+echo "Debug - pwd: $(pwd)"
+echo "::group::Debug - SOURCE: ${SOURCE}"
+tree "${SOURCE}" || ls -lAhR "${SOURCE}"
+echo "::endgroup::"
+
 if [ "${GITHUB_EVENT_NAME}" == "release" ];then
     VERSION="${GITHUB_REF_NAME}"
 fi
