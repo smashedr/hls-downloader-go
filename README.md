@@ -31,7 +31,7 @@ A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downlo
 | **Windows** | `x32` | Intel | ❔  |
 | **Linux**   | `x64` | Intel | ✅  |
 | **Linux**   | `x64` |  ARM  | ⛔  |
-| **macOS**   | `x64` | Intel | ❔  |
+| **macOS**   | `x64` | Intel | ✅  |
 | **macOS**   | `x64` |  ARM  | ❔  |
 
 ### Windows
