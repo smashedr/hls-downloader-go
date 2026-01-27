@@ -43,15 +43,9 @@ jobs:
           name: client
           path: dist/client
 
-      - name: "DEBUG task"
-        if: ${{ runner.os == 'Windows' }}
-        shell: bash
-        run: |
-          which task
-          task --list
-          task manifest
-
+      # Note: task does not work in pwsh
       - name: "Generate Assets"
+        shell: bash
         run: |
           task manifest
 
@@ -91,7 +85,7 @@ jobs:
       - name: "Upload to Actions"
         uses: actions/upload-artifact@v6
         with:
-          name: linux-installer
+          name: "installer-${{ matrix.name }}"
           path: out
 
       - name: "Upload Release"
