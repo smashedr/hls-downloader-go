@@ -1,3 +1,5 @@
+[![GitHub Release](https://img.shields.io/github/v/release/smashedr/hls-downloader-go?logo=github)](https://github.com/smashedr/hls-downloader-go/releases/latest)
+[![GitHub Downloads](https://img.shields.io/github/downloads/smashedr/hls-downloader-go/total?logo=rolldown&logoColor=white)](https://github.com/smashedr/hls-downloader-go/releases)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/smashedr/hls-downloader-go?logo=go&logoColor=white&label=go)](https://github.com/smashedr/hls-downloader-go/blob/master/go.mod)
 [![Workflow Lint](https://img.shields.io/github/actions/workflow/status/smashedr/hls-downloader-go/lint.yaml?logo=testcafe&logoColor=white&label=lint)](https://github.com/smashedr/hls-downloader-go/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/smashedr/hls-downloader-go?logo=listenhub&label=updated)](https://github.com/smashedr/hls-downloader-go/pulse)
@@ -25,26 +27,61 @@ A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downlo
 
 ## Status
 
-| System      | Type  | Arch  | 🛠️  |
-| :---------- | :---: | :---: | :-: |
-| **Windows** | `x64` | Intel | ✅  |
-| **Windows** | `x32` | Intel | ❔  |
-| **Linux**   | `x64` | Intel | ✅  |
-| **Linux**   | `x64` |  ARM  | ⛔  |
-| **macOS**   | `x64` | Intel | ✅  |
-| **macOS**   | `x64` |  ARM  | ❔  |
+[![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
+[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
+[![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
+
+✅ Working  
+⚠️ Work in Progress  
+⛔ Not Planned but Supported
+
+| System      |                                                                           Arch                                                                            | Status |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   |
+| **Windows** |  [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ⛔   |
+| **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ✅   |
+| **Linux**   |    [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)    |   ⚠️   |
+| **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ✅   |
+| **macOS**   |    [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)    |   ⚠️   |
 
 ### Windows
 
 - No option to skip ffmpeg download yet
 
+I don't plan to support an installer for ARM (but the app supports ARM).
+
 ### Linux
 
-- Requires ffmpeg in PATH
+- Requires ffmpeg in PATH (default PATH).
+
+The .deb installer needs to be updated to package and install the Intel and ARM version.
 
 ### macOS
 
-- Requires ffmpeg in PATH
+Requires ffmpeg in PATH. Additional PATHS checked:
+
+- /usr/local/bin
+- /opt/homebrew/bin
+- /opt/local/bin
+- /sw/bin
+- ~/bin
+
+The .pkg installer needs to be updated to package and install the Intel and ARM version.
+
+# Support
+
+If you run into any issues or need help getting started, please do one of the following:
+
+- Report an Issue: <https://github.com/smashedr/hls-downloader-go/issues>
+- Q&A Discussion: <https://github.com/smashedr/hls-downloader-go/discussions/categories/q-a>
+- Request a Feature: <https://github.com/smashedr/hls-downloader-go/issues/new?template=1-feature.yaml>
+- Chat with us on Discord: <https://discord.gg/wXy6m2X8wY>
+
+[![Features](https://img.shields.io/badge/features-brightgreen?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/smashedr/hls-downloader-go/issues/new?template=1-feature.yaml)
+[![Issues](https://img.shields.io/badge/issues-red?style=for-the-badge&logo=southwestairlines&logoColor=white)](https://github.com/smashedr/hls-downloader-go/issues)
+[![Discussions](https://img.shields.io/badge/discussions-blue?style=for-the-badge&logo=theconversation&logoColor=white)](https://github.com/smashedr/hls-downloader-go/discussions)
+[![Discord](https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wXy6m2X8wY)
 
 # Contributing
 
