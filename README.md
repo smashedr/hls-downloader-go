@@ -16,13 +16,22 @@
 
 # HLS Video Downloader Go
 
-A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
+<a title="HLS Video Downloader" href="https://github.com/cssnr/hls-video-downloader" target="_blank">
+<img alt="HLS Video Downloader" align="right" width="128" height="auto" src="https://raw.githubusercontent.com/smashedr/hls-downloader-go/refs/heads/master/assets/logo.png"></a>
 
-- Original Client: https://github.com/cssnr/hls-downloader-client
+- [Status](#Status)
+  - [Windows](#windows-)
+  - [Linux](#linux-)
+  - [macOS](#macos-)
+- [Support](#Support)
+- [Contributing](#Contributing)
+
+A rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
+
 - Web Extension: https://github.com/cssnr/hls-video-downloader
 
-> [!WARNING]  
-> This project is still in development but somewhat functional.  
+> [!IMPORTANT]  
+> This project is still in development but functional.  
 > You must **uninstall** the original client before installing.
 
 ## Status
@@ -31,43 +40,47 @@ A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downlo
 [![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
 [![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
-✅ Working  
-⚠️ Work in Progress  
-⛔ Not Planned but Supported
+See below for additional details on each system.
 
 | System      |                                                                           Arch                                                                            | Status |
 | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   |
-| **Windows** |  [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ⛔   |
+| **Windows** |                                                  ![Windows](https://img.shields.io/badge/ARM-arm64-blue)                                                  |   ⛔   |
 | **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ✅   |
-| **Linux**   |    [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)    |   ⚠️   |
+| **Linux**   |                                                  ![Linux](https://img.shields.io/badge/ARM-arm64-blue)]                                                   |   ⚠️   |
 | **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ✅   |
-| **macOS**   |    [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)    |   ⚠️   |
+| **macOS**   |                                                   ![macOS](https://img.shields.io/badge/ARM-arm64-blue)                                                   |   ⚠️   |
 
-### Windows
+### Windows 🪟
 
 - No option to skip ffmpeg download yet
 
 I don't plan to support an installer for ARM (but the app supports ARM).
 
-### Linux
+[windows-installer.exe](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
+
+### Linux 🐧
 
 - Requires ffmpeg in PATH (default PATH).
 
 The .deb installer needs to be updated to package and install the Intel and ARM version.
 
-### macOS
+[linux-installer.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
 
-Requires ffmpeg in PATH. Additional PATHS checked:
+### macOS 🍎
 
-- /usr/local/bin
-- /opt/homebrew/bin
-- /opt/local/bin
-- /sw/bin
-- ~/bin
+Requires ffmpeg in PATH. Additional PATH's checked:
+
+- `/usr/local/bin`
+- `/opt/homebrew/bin`
+- `/opt/local/bin`
+- `/sw/bin`
+- `~/bin`
 
 The .pkg installer needs to be updated to package and install the Intel and ARM version.
+
+[macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
 # Support
 
