@@ -71,6 +71,7 @@ Root: HKCU; Subkey: "Software\Waterfox\NativeMessagingHosts\{#MyAppFolder}"; Val
 [UninstallDelete]
 Type: files; Name: "{app}\ffmpeg.exe"
 Type: files; Name: "{app}\log.txt"
+Type: files; Name: "{app}\log-1.txt"
 Type: files; Name: "{app}\client.bat"
 Type: files; Name: "{app}\client.sh"
 ;Type: dirifempty; Name: "{app}"
