@@ -23,6 +23,29 @@ A re-wright of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downlo
 > This project is still in development but somewhat functional.  
 > You must **uninstall** the original client before installing.
 
+## Status
+
+| System      | Type  | Arch  | 🛠️  |
+| :---------- | :---: | :---: | :-: |
+| **Windows** | `x64` | Intel | ✅  |
+| **Windows** | `x32` | Intel | ❔  |
+| **Linux**   | `x64` | Intel | ✅  |
+| **Linux**   | `x64` |  ARM  | ⛔  |
+| **macOS**   | `x64` | Intel | ❔  |
+| **macOS**   | `x64` |  ARM  | ❔  |
+
+### Windows
+
+- No option to skip ffmpeg download yet
+
+### Linux
+
+- Requires ffmpeg in PATH
+
+### macOS
+
+- Requires ffmpeg in PATH
+
 # Contributing
 
 If you would like to submit a PR, please review the [CONTRIBUTING.md](#contributing-ov-file).

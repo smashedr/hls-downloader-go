@@ -561,7 +561,7 @@
 										<key>GID</key>
 										<integer>0</integer>
 										<key>PATH</key>
-										<string>dist/client/client_darwin_arm64_v8.0/client</string>
+										<string>dist/client/client_darwin_amd64_v1/client</string>
 										<key>PATH_TYPE</key>
 										<integer>1</integer>
 										<key>PERMISSIONS</key>
