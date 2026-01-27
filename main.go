@@ -124,7 +124,12 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 	exeName := "ffmpeg"
 	if runtime.GOOS == "windows" {
 		exeName = "ffmpeg.exe"
+	} else if runtime.GOOS == "darwin" {
+		currentPath := os.Getenv("PATH")
+		newPath := ":/usr/local/bin:/opt/homebrew/bin:/opt/local/bin:/sw/bin:" + os.Getenv("HOME") + "/bin"
+		_ = os.Setenv("PATH", currentPath+newPath)
 	}
+	log.Printf("PATH: %s\n", os.Getenv("PATH"))
 	log.Printf("exeName: %s\n", exeName)
 	var ffmpegPath string
 	if _, err := os.Stat(exeName); err == nil {
