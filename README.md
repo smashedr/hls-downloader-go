@@ -46,15 +46,13 @@ See below for additional details on each system.
 | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :----: |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   |
-| **Windows** |                                                  ![Windows](https://img.shields.io/badge/ARM-arm64-blue)                                                  |   ⛔   |
+| **Windows** |                                               [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                |   ⛔   |
 | **Linux**   |   [![Linux](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)   |   ✅   |
-| **Linux**   |                                                  ![Linux](https://img.shields.io/badge/ARM-arm64-blue)]                                                   |   ⚠️   |
+| **Linux**   |                                                [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
 | **macOS**   |   [![macOS](https://img.shields.io/badge/Intel-amd64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)   |   ✅   |
-| **macOS**   |                                                   ![macOS](https://img.shields.io/badge/ARM-arm64-blue)                                                   |   ⚠️   |
+| **macOS**   |                                                [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                 |   ⚠️   |
 
 ### Windows 🪟
-
-- No option to skip ffmpeg download yet
 
 I don't plan to support an installer for ARM (but the app supports ARM).
 
@@ -64,7 +62,7 @@ I don't plan to support an installer for ARM (but the app supports ARM).
 
 - Requires ffmpeg in PATH (default PATH).
 
-The .deb installer needs to be updated to package and install the Intel and ARM version.
+The .deb installer needs to be updated to package/install the ARM version.
 
 [linux-installer.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
 
@@ -78,7 +76,7 @@ Requires ffmpeg in PATH. Additional PATH's checked:
 - `/sw/bin`
 - `~/bin`
 
-The .pkg installer needs to be updated to package and install the Intel and ARM version.
+The .pkg installer needs to be updated to package/install the ARM version.
 
 [macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
