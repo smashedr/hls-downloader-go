@@ -24,6 +24,7 @@
   - [Windows](#windows-)
   - [Linux](#linux-)
   - [macOS](#macos-)
+  - [Homebrew](#homebrew-)
 - [Support](#Support)
 - [Contributing](#Contributing)
 
@@ -91,6 +92,17 @@ Requires ffmpeg in PATH. Additional PATH's checked:
 - `~/bin`
 
 The installer does not yet support M-series (ARM) but is planned.
+
+### Homebrew 🍺
+
+A Homebrew Formula is available for Linux/macOS.
+
+```shell
+brew install --force-bottle ffmpeg
+brew install smashedr/test/hls
+```
+
+You must run the commands in the Caveats after the installation.
 
 # Support
 
