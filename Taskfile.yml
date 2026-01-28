@@ -22,7 +22,7 @@ tasks:
       yamllint -c .github/yamllint.yaml .
       golangci-lint run
       actionlint
-      shellcheck assets/build-linux.sh assets/build-mac.sh
+      shellcheck scripts/build-linux.sh scripts/build-mac.sh
 
   clean:
     desc: Clean
@@ -38,7 +38,7 @@ tasks:
 
   manifest:
     desc: Generate Manifest
-    cmd: python assets/manifest.py {{.CLI_ARGS}}
+    cmd: python scripts/manifest.py {{.CLI_ARGS}}
 
   icon:
     cmd: convert assets/logo.png -define icon:auto-resize=256,128,96,64,48,32,16 -compress None dist/favicon.ico
