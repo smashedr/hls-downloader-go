@@ -21,6 +21,21 @@ var (
 	//date    = "unknown"
 )
 
+type Message struct {
+	Download string `json:"download"`
+	Message  string `json:"message"`
+	Open     string `json:"open"`
+	Title    string `json:"title"`
+	Version  string `json:"version"`
+}
+
+type Response struct {
+	CurrentVersion string `json:"current_version"`
+	Message        string `json:"message"`
+	Path           string `json:"path"`
+	Success        bool   `json:"success"`
+}
+
 func setupLogging() (*os.File, error) {
 	const fileName = "log.txt"
 	const maxSize = 1000000
@@ -35,35 +50,35 @@ func setupLogging() (*os.File, error) {
 	return logFile, nil
 }
 
-func readMessage() (map[string]interface{}, error) {
+func readMessage() (Message, error) {
 	// Read the 4-byte message length
 	var length uint32
 	if err := binary.Read(os.Stdin, binary.LittleEndian, &length); err != nil {
-		return nil, fmt.Errorf("failed to read message length: %w", err)
+		return Message{}, fmt.Errorf("failed to read message length: %w", err)
 	}
 
 	// Read the message content
 	data := make([]byte, length)
 	if _, err := io.ReadFull(os.Stdin, data); err != nil {
-		return nil, fmt.Errorf("failed to read message data: %w", err)
+		return Message{}, fmt.Errorf("failed to read message data: %w", err)
 	}
 
 	// Parse JSON
-	var message map[string]interface{}
+	var message Message
 	if err := json.Unmarshal(data, &message); err != nil {
-		return nil, fmt.Errorf("failed to unmarshal json: %w", err)
+		return Message{}, fmt.Errorf("failed to unmarshal json: %w", err)
 	}
 
 	return message, nil
 }
 
-func sendResponse(data map[string]interface{}, success bool) error {
+func sendResponse(response Response, success bool) error {
 	// Add success field
-	data["success"] = success
-	log.Printf("sendResponse: %v\n", data)
+	response.Success = success
+	log.Printf("sendResponse: %v\n", response)
 
 	// Marshal to JSON
-	jsonData, err := json.Marshal(data)
+	jsonData, err := json.Marshal(response)
 	if err != nil {
 		return fmt.Errorf("failed to marshal JSON: %w", err)
 	}
@@ -122,10 +137,10 @@ func generateRandomString(length int) string {
 	return string(result)
 }
 
-func downloadUrl(message map[string]interface{}) (string, error) {
+func downloadUrl(message Message) (string, error) {
 	// get url
-	url, _ := message["download"].(string)
-	log.Printf("url: %v\n", url)
+	url := message.Download
+	log.Printf("downloadUrl: %v\n", url)
 
 	// get ffmpeg
 	//cwd, _ := os.Getwd()
@@ -174,12 +189,12 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		log.Printf("Created Downloads Directory: %s\n", directory)
 		if err := os.MkdirAll(directory, 0755); err != nil {
-			log.Fatal(err)
+			return "", fmt.Errorf("error creating downloads directory: %w", err)
 		}
 	}
 
 	// get filename
-	title, _ := message["title"].(string)
+	title := message.Title
 	log.Printf("title: %s\n", title)
 	var filename string
 	if title != "" {
@@ -218,7 +233,7 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 }
 
 func main() {
-	//Setup logging
+	// Setup logging
 	logFile, err := setupLogging()
 	if err == nil {
 		defer func() { _ = logFile.Close() }()
@@ -228,35 +243,35 @@ func main() {
 	message, err := readMessage()
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
 	log.Printf("message: %+v\n", message)
 
-	// Process message and generate response
-	var response map[string]interface{}
+	// Generate the response
+	var response Response
 	var success = true
-	if _, exists := message["version"]; exists {
-		log.Println("VERSION")
-		response = map[string]interface{}{"current_version": version}
-	} else if _, exists := message["open"]; exists {
-		log.Println("OPEN")
-		file, _ := message["open"].(string)
+	if message.Version != "" {
+		// version check
+		response.CurrentVersion = version
+	} else if message.Open != "" {
+		// open file
+		file := message.Open
 		if err := showFileInExplorer(file); err != nil {
 			log.Printf("Error opening file in explorer: %v\n", err)
 		}
-		response = map[string]interface{}{"message": "opened"}
-	} else if _, exists := message["download"]; exists {
-		log.Println("DOWNLOAD")
+		response.Message = "opened"
+	} else if message.Download != "" {
+		// download file
 		path, err := downloadUrl(message)
 		if err != nil {
 			log.Printf("Download error: %v\n", err)
-			response = map[string]interface{}{"message": err.Error()}
+			response.Message = err.Error()
 			success = false
 		} else {
-			response = map[string]interface{}{"message": "INOP!", "path": path}
+			response.Message = "Download Finished."
+			response.Path = path
 		}
 	} else {
-		response = map[string]interface{}{"message": "Host Client Working."}
+		response.Message = "Host Client Working."
 	}
 
 	// Send the response
