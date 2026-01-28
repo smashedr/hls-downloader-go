@@ -13,10 +13,10 @@
 
 ## Linux
 
-- Create single installer for all architectures ??
+- Create single .deb installer for all architectures ??
 - Add ffmpeg requirement ??
 
 ## macOS
 
-- Create or add ARM to the installer package
+- Create or add ARM to the .pkg installer package
 - Add optional ffmpeg download step ??

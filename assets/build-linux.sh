@@ -13,7 +13,7 @@ echo "::group::SOURCE: ${SOURCE}"
 tree "${SOURCE}" || ls -lAhR "${SOURCE}"
 echo "::endgroup::"
 
-if [ "${GITHUB_EVENT_NAME}" == "release" ];then
+if [[ "${GITHUB_EVENT_NAME}" == "release" ]];then
     VERSION="${GITHUB_REF_NAME}"
 fi
 echo "VERSION: ${VERSION}"

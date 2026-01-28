@@ -47,8 +47,8 @@ release:
   # You can disable this pipe in order to not create the release on any SCM.
   # Keep in mind that this might also break things that depend on the release
   # URL, for instance, homebrew taps.
-  disable: true
-  #replace_existing_artifacts: true
+  #disable: true
+  replace_existing_artifacts: true
 
 #dockers_v2:
 #  - images:

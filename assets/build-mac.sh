@@ -7,7 +7,7 @@ APP_NAME="org.cssnr.hls.downloader"
 DEST="dist"
 VERSION="0.0.1"
 
-if [ "${GITHUB_EVENT_NAME}" == "release" ];then
+if [[ "${GITHUB_EVENT_NAME}" == "release" ]];then
     VERSION="${GITHUB_REF_NAME}"
 fi
 echo "Building version: ${VERSION}"
