@@ -20,6 +20,7 @@ builds:
       - windows_amd64_v1 # win 64 intel
       - windows_386 # win 32 intel
       - linux_amd64_v1 # linux 64 intel
+      - linux_386 # linux 32 intel
       - linux_arm64 # linux 64 arm
       - darwin_amd64 # mac 64 intel
       - darwin_arm64 # mac 64 arm
