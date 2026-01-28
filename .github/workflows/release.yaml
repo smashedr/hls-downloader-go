@@ -92,23 +92,24 @@ jobs:
       contents: write
 
     steps:
-      #- name: "Create App Token"
-      #  if: ${{ !github.event.release.prerelease }}
-      #  id: app
-      #  uses: actions/create-github-app-token@v2
-      #  with:
-      #    app-id: 146360
-      #    private-key: ${{ secrets.APP_PRIVATE_KEY }}
-      #    owner: smashedr
-      #    repositories: homebrew-test
-      #
-      #- name: "Homebrew Action"
-      #  if: ${{ !github.event.release.prerelease }}
-      #  uses: cssnr/homebrew-action@master
-      #  with:
-      #    file: dist/formula/bup.rb
-      #    repo: smashedr/homebrew-test
-      #    token: ${{ steps.app.outputs.token }}
+      - name: "Create App Token"
+        if: ${{ !github.event.release.prerelease }}
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: 146360
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: smashedr
+          repositories: homebrew-test
+
+      - name: "Homebrew Action"
+        if: ${{ !github.event.release.prerelease }}
+        uses: cssnr/homebrew-action@master
+        with:
+          repo: smashedr/homebrew-test
+          token: ${{ steps.app.outputs.token }}
+          version: ${{ github.ref_name }}
+          calculate: false
 
       - name: "VirusTotal"
         uses: cssnr/virustotal-action@master

@@ -22,6 +22,7 @@ DefaultDirName={localappdata}\{#MyAppFolder}
 DefaultGroupName={#MyAppName}
 ;DisableDirPage=yes
 DisableProgramGroupPage=yes
+;DisableFinishedPage=yes
 InfoBeforeFile=assets\pre-install.rtf
 InfoAfterFile=assets\post-install.rtf
 
@@ -34,24 +35,19 @@ UninstallDisplayIcon={uninstallexe}
 WizardStyle=modern dynamic
 
 ArchitecturesInstallIn64BitMode=x64compatible arm64
-ArchiveExtraction=full
 
+ArchiveExtraction=full
 ;ChangesEnvironment=yes
-;DisableFinishedPage=yes
 ;LicenseFile=LICENSE
 ;VersionInfoVersion={#MyAppVersion}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
-//[Tasks]
-//Name: "downloadffmpeg"; Description: "Download FFmpeg"; Flags: checkedonce
-
 [Tasks]
 Name: "downloadffmpeg"; Description: "Download FFmpeg"; Flags: checkedonce
 
 [Files]
-;Source: "dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\client\client_windows_386_sse2\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode()
 Source: "dist\client\client_windows_amd64_v1\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode() and not IsArm64()
 Source: "dist\client\client_windows_arm64_v8.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: IsArm64()

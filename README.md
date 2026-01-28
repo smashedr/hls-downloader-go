@@ -69,7 +69,9 @@ See below for additional caveats on each system.
 
 - [windows-installer.exe](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
 
-No caveats. Universal installer. Please report any bugs.
+Caveats:
+
+- None
 
 ### Linux 🐧
 
@@ -77,32 +79,39 @@ No caveats. Universal installer. Please report any bugs.
 - [linux-installer-i386.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)
 - [linux-installer-arm64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)
 
-Requires ffmpeg in PATH (default PATH).
+Caveats:
+
+- Requires ffmpeg in PATH.
 
 ### macOS 🍎
 
 - [macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
-Requires ffmpeg in PATH. Additional PATH's checked:
+Caveats:
 
-- `/usr/local/bin`
-- `/opt/homebrew/bin`
-- `/opt/local/bin`
-- `/sw/bin`
-- `~/bin`
+- Requires ffmpeg in PATH.
+- The installer does not yet support M-series (ARM).
 
-The installer does not yet support M-series (ARM) but is planned.
+Additional PATH's checked.
+
+```text
+/usr/local/bin
+/opt/homebrew/bin
+/opt/local/bin
+/sw/bin
+~/bin
+```
 
 ### Homebrew 🍺
-
-A Homebrew Formula is available for Linux/macOS.
 
 ```shell
 brew install --force-bottle ffmpeg
 brew install smashedr/test/hls
 ```
 
-You must run the commands in the Caveats after the installation.
+Caveats:
+
+- You must run the commands in the Caveats after the installation.
 
 # Support
 
