@@ -17,7 +17,7 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 ;Compression=lzma
-SolidCompression=yes
+;SolidCompression=yes
 DefaultDirName={localappdata}\{#MyAppFolder}
 DefaultGroupName={#MyAppName}
 ;DisableDirPage=yes
@@ -33,7 +33,7 @@ SetupIconFile=assets\favicon.ico
 UninstallDisplayIcon={uninstallexe}
 WizardStyle=modern dynamic
 
-ArchitecturesInstallIn64BitMode=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible arm64
 ArchiveExtraction=full
 
 ;ChangesEnvironment=yes
@@ -53,7 +53,8 @@ Name: "downloadffmpeg"; Description: "Download FFmpeg"; Flags: checkedonce
 [Files]
 ;Source: "dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\client\client_windows_386_sse2\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode()
-Source: "dist\client\client_windows_amd64_v1\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode()
+Source: "dist\client\client_windows_amd64_v1\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode() and not IsArm64()
+Source: "dist\client\client_windows_arm64_v8.0\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Check: IsArm64()
 Source: "dist\manifest-chrome.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\manifest-firefox.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "https://github.com/defisym/FFmpeg-Builds-Win32/releases/download/latest/ffmpeg-master-latest-win32-gpl.zip"; DestName: "ffmpeg-master-latest-win32-gpl.zip"; DestDir: "{app}"; \
