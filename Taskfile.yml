@@ -22,6 +22,7 @@ tasks:
       yamllint -c .github/yamllint.yaml .
       golangci-lint run
       actionlint
+      shellcheck assets/build-linux.sh assets/build-mac.sh
 
   clean:
     desc: Clean

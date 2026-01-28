@@ -7,11 +7,11 @@
 
 ## Windows
 
-- Add Icons (Start Menu) items with links
+- Add Icons (start menu) items with links
 
 ## Linux
 
-- Add ARM installer
+- Create single installer for all architectures ??
 - Add ffmpeg requirement ??
 
 ## macOS

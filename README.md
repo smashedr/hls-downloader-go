@@ -40,36 +40,41 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 ## Status
 
 [![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
-[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
+[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
 [![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
 See below for additional details on each system.
 
-| System      | Architecture&nbsp;&nbsp;&nbsp;                                                                                                                                   | Status | Details          |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | ---------------- |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe) |   ✅   | Finished         |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)  |   ✅   | Finished         |
-| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                     |   ⛔   | Not&nbsp;Planned |
-| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)     |   ☑️   | Working          |
-| **Linux**   | [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                       |   ⚠️   | Planned          |
-| **macOS**   | [![macOS](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)     |   ☑️   | Working          |
-| **macOS**   | [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                       |   ⚠️   | Planned          |
+| System      | Architecture&nbsp;&nbsp;&nbsp;                                                                                                                                     | Status | Details          |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | ---------------- |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)   |   ✅   | Finished         |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)    |   ✅   | Finished         |
+| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                       |   ⛔   | Not&nbsp;Planned |
+| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb) |   ☑️   | Working          |
+| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)   |   ☑️   | Working          |
+| **Linux**   | [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)          |   ☑️   | Working          |
+| **macOS**   | [![macOS](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)       |   ☑️   | Working          |
+| **macOS**   | [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                         |   ⚠️   | Planned          |
 
 ### Windows 🪟
+
+- [windows-installer.exe](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
 
 Working and finished. Please report any bugs.
 
 I don't plan to support an installer for ARM (but the app supports ARM).
 
-[windows-installer.exe](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
-
 ### Linux 🐧
+
+- [linux-installer-amd64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
+- [linux-installer-i386.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)
+- [linux-installer-arm64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)
 
 Requires ffmpeg in PATH (default PATH).
 
-[linux-installer.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer.deb)
-
 ### macOS 🍎
+
+- [macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
 Requires ffmpeg in PATH. Additional PATH's checked:
 
@@ -78,8 +83,6 @@ Requires ffmpeg in PATH. Additional PATH's checked:
 - `/opt/local/bin`
 - `/sw/bin`
 - `~/bin`
-
-[macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
 # Support
 

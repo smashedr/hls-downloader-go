@@ -72,3 +72,11 @@ jobs:
       - name: "actionlint"
         if: ${{ !cancelled() }}
         uses: cssnr/actionlint-action@v1
+
+      - name: "ShellCheck"
+        if: ${{ !cancelled() }}
+        uses: ludeeus/action-shellcheck@master
+        env:
+          SHELLCHECK_OPTS: -x
+        with:
+          scandir: assets
