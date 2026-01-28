@@ -47,9 +47,9 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 
 ## Status
 
-[![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
-[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
-[![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
+[![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](#windows-)
+[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](#linux-)
+[![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](#macos-)
 
 See below for additional caveats on each system.
 
@@ -72,9 +72,9 @@ No caveats. Universal installer. Please report any bugs.
 
 ### Linux 🐧
 
-- [linux-installer-amd64.deb](#windows-)
-- [linux-installer-i386.deb](#linux-)
-- [linux-installer-arm64.deb](#macos-)
+- [linux-installer-amd64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
+- [linux-installer-i386.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)
+- [linux-installer-arm64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)
 
 Requires ffmpeg in PATH (default PATH).
 
