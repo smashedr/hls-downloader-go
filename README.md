@@ -31,6 +31,14 @@ HLS Video Downloader Client. A Rewrite of [cssnr/hls-downloader-client](https://
 
 A Web Extension Native Messaging Client written in Go with installers for most platforms.
 
+[![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](#windows-)
+[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](#linux-)
+[![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](#macos-)
+
+> [!IMPORTANT]  
+> This project is still in development but is very functional!  
+> You must **uninstall** the original client before installing.
+
 - Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
 
 [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
@@ -41,15 +49,7 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 [![Vivaldi](https://raw.githubusercontent.com/alrra/browser-logos/main/src/vivaldi/vivaldi_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
 [![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
 
-> [!IMPORTANT]  
-> This project is still in development but is very functional!  
-> You must **uninstall** the original client before installing.
-
 ## Status
-
-[![Windows](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/windows48.png)](#windows-)
-[![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](#linux-)
-[![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](#macos-)
 
 See below for additional caveats on each system.
 
