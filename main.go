@@ -21,6 +21,20 @@ var (
 	//date    = "unknown"
 )
 
+func setupLogging() (*os.File, error) {
+	const fileName = "log.txt"
+	const maxSize = 1000000
+	if info, err := os.Stat(fileName); err == nil && info.Size() >= maxSize {
+		_ = os.Rename(fileName, "log-1.txt")
+	}
+	logFile, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		return nil, err
+	}
+	log.SetOutput(logFile)
+	return logFile, nil
+}
+
 func readMessage() (map[string]interface{}, error) {
 	// Read the 4-byte message length
 	var length uint32
@@ -204,12 +218,10 @@ func downloadUrl(message map[string]interface{}) (string, error) {
 }
 
 func main() {
-	// Setup logging
-	//logPath := filepath.Clean("C:/Users/Shane/IdeaProjects/hls-downloader-go/log.txt")
-	logFile, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	//Setup logging
+	logFile, err := setupLogging()
 	if err == nil {
 		defer func() { _ = logFile.Close() }()
-		log.SetOutput(logFile)
 	}
 
 	// Read the message
