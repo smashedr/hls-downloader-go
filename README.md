@@ -31,10 +31,6 @@ HLS Video Downloader Client. A Rewrite of [cssnr/hls-downloader-client](https://
 
 A Web Extension Native Messaging Client written in Go with installers for most platforms.
 
-> [!IMPORTANT]  
-> This project is still in development but is very functional!  
-> You must **uninstall** the original client before installing.
-
 - Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
 
 [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
@@ -44,6 +40,10 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 [![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
 [![Vivaldi](https://raw.githubusercontent.com/alrra/browser-logos/main/src/vivaldi/vivaldi_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
 [![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+
+> [!IMPORTANT]  
+> This project is still in development but is very functional!  
+> You must **uninstall** the original client before installing.
 
 ## Status
 
