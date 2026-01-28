@@ -73,7 +73,6 @@ Type: files; Name: "{app}\ffmpeg.exe"
 Type: files; Name: "{app}\log.txt"
 Type: files; Name: "{app}\log-1.txt"
 Type: files; Name: "{app}\client.bat"
-Type: files; Name: "{app}\client.sh"
 ;Type: dirifempty; Name: "{app}"
 
 [Code]
@@ -83,7 +82,6 @@ var
   SourceDir: String;
   ResultCode: Integer;
 begin
-  //MsgBox('Just installed Shit as ' + CurrentFileName + '.', mbInformation, MB_OK);
   FindFirst(ExpandConstant('{app}') + '\ffmpeg-*', FindRec)
   Log('FindRec.Name: ' + FindRec.Name)
   SourceDir := ExpandConstant('{app}') + '\' + FindRec.Name;

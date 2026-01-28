@@ -26,7 +26,7 @@ type Message struct {
 	Message  string `json:"message"`
 	Open     string `json:"open"`
 	Title    string `json:"title"`
-	Version  string `json:"version"`
+	Version  bool   `json:"version"`
 }
 
 type Response struct {
@@ -249,7 +249,7 @@ func main() {
 	// Generate the response
 	var response Response
 	var success = true
-	if message.Version != "" {
+	if message.Version {
 		// version check
 		response.CurrentVersion = version
 	} else if message.Open != "" {
