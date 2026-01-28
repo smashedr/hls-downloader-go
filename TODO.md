@@ -8,6 +8,8 @@
 ## Windows
 
 - Add Icons (start menu) items with links
+- ARM - needs to be tested, somehow...
+- Copy Application ID from original app
 
 ## Linux
 
@@ -16,5 +18,5 @@
 
 ## macOS
 
-- Add ARM installer
+- Create or add ARM to the installer package
 - Add optional ffmpeg download step ??

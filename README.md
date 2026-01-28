@@ -29,13 +29,21 @@
 
 HLS Video Downloader Client. A Rewrite of [cssnr/hls-downloader-client](https://github.com/cssnr/hls-downloader-client) in Go.
 
-- Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
-
 A Web Extension Native Messaging Client written in Go with installers for most platforms.
 
 > [!IMPORTANT]  
-> This project is still in development but functional.  
+> This project is still in development but is very functional!  
 > You must **uninstall** the original client before installing.
+
+- Web Extension: [cssnr/hls-video-downloader](https://github.com/cssnr/hls-video-downloader)
+
+[![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+[![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png)](https://addons.mozilla.org/addon/hls-video-downloader)
+[![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+[![Chromium](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chromium/chromium_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+[![Brave](https://raw.githubusercontent.com/alrra/browser-logos/main/src/brave/brave_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+[![Vivaldi](https://raw.githubusercontent.com/alrra/browser-logos/main/src/vivaldi/vivaldi_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
+[![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png)](https://chromewebstore.google.com/detail/hls-video-downloader/mpmiiaolodhanoalpjncddpmnkbjicbo)
 
 ## Status
 
@@ -43,13 +51,13 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 [![Linux](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/linux48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
 [![macOS](https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/os/macos48.png)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)
 
-See below for additional details on each system.
+See below for additional caveats on each system.
 
 | System      | Architecture&nbsp;&nbsp;&nbsp;                                                                                                                                     | Status | Details  |
 | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | -------- |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)   |   ✅   | Finished |
 | **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)    |   ✅   | Finished |
-| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)            |   ✅   | Working  |
+| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)            |   ✅   | Finished |
 | **Linux**   | [![Linux](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb) |   ☑️   | Working  |
 | **Linux**   | [![Linux](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)   |   ☑️   | Working  |
 | **Linux**   | [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)          |   ☑️   | Working  |
@@ -60,13 +68,13 @@ See below for additional details on each system.
 
 - [windows-installer.exe](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)
 
-Working and finished. Please report any bugs.
+No caveats. Universal installer. Please report any bugs.
 
 ### Linux 🐧
 
-- [linux-installer-amd64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
-- [linux-installer-i386.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)
-- [linux-installer-arm64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)
+- [linux-installer-amd64.deb](#windows-)
+- [linux-installer-i386.deb](#linux-)
+- [linux-installer-arm64.deb](#macos-)
 
 Requires ffmpeg in PATH (default PATH).
 
@@ -81,6 +89,8 @@ Requires ffmpeg in PATH. Additional PATH's checked:
 - `/opt/local/bin`
 - `/sw/bin`
 - `~/bin`
+
+The installer does not yet support M-series (ARM) but is planned.
 
 # Support
 
