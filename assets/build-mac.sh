@@ -16,6 +16,7 @@ echo "DEST: ${DEST}"
 ls -lah "${DEST}"
 
 touch "${DEST}/log.txt"
+touch "${DEST}/log-1.txt"
 
 mkdir -p "${DEST}/firefox"
 mkdir -p "${DEST}/chrome"

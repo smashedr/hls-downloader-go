@@ -36,8 +36,8 @@ mkdir -p "${firefox}"
 
 cp -f "dist/client/client_linux_amd64_v1/client" "${PACKAGE}/opt/${APP_NAME}/client"
 chmod +x "${PACKAGE}/opt/${APP_NAME}/client"
-touch "${PACKAGE}/opt/${APP_NAME}/log.txt"
-chmod g+w "${PACKAGE}/opt/${APP_NAME}/log.txt"
+touch "${PACKAGE}/opt/${APP_NAME}/log.txt" "${PACKAGE}/opt/${APP_NAME}/log-1.txt"
+chmod g+w "${PACKAGE}/opt/${APP_NAME}/log.txt" "${PACKAGE}/opt/${APP_NAME}/log-1.txt"
 
 cp -f "${SOURCE}/manifest-chrome.json" "${chrome}/${APP_NAME}.json"
 cp -f "${SOURCE}/manifest-chrome.json" "${chromium}/${APP_NAME}.json"
