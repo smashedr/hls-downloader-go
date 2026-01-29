@@ -68,8 +68,8 @@ release:
 
 #brews:
 #  - repository:
-#      owner: smashedr
-#      name: homebrew-test
+#      owner: cssnr
+#      name: homebrew-tap
 #      token: "{{ .Env.GITHUB_TOKEN }}"
 #    directory: Formula
 #    homepage: "https://github.com/smashedr/{{ .ProjectName }}"

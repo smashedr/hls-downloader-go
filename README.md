@@ -106,7 +106,7 @@ Additional PATH's checked.
 
 ```shell
 brew install --force-bottle ffmpeg
-brew install smashedr/test/hls
+brew install cssnr/tap/hls
 ```
 
 Caveats:
