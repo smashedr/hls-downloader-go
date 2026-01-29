@@ -65,7 +65,7 @@ jobs:
       - name: "Build Linux"
         if: ${{ runner.os == 'Linux' }}
         run: |
-          bash assets/build-linux.sh
+          bash scripts/build-linux.sh
 
       - name: "Build macOS"
         if: ${{ runner.os == 'macOS' }}
@@ -75,7 +75,7 @@ jobs:
           hdiutil attach Packages.dmg
           sudo installer -pkg "/Volumes/Packages 1.2.10/Install Packages.pkg" -target /
           hdiutil detach "/Volumes/Packages 1.2.10"
-          bash assets/build-mac.sh
+          bash scripts/build-mac.sh
 
       - name: "Debug Output"
         continue-on-error: true

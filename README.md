@@ -52,18 +52,18 @@ A Web Extension Native Messaging Client written in Go with installers for most p
 
 ## Status
 
-See below for additional caveats on each system.
+Status of installer packages and supported architectures.
 
-| System      | Architecture&nbsp;&nbsp;&nbsp;                                                                                                                                     | Status | Details  |
-| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | -------- |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)   |   ✅   | Finished |
-| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)    |   ✅   | Finished |
-| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)            |   ✅   | Finished |
-| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb) |   ☑️   | Working  |
-| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)   |   ☑️   | Working  |
-| **Linux**   | [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)          |   ☑️   | Working  |
-| **macOS**   | [![macOS](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)       |   ☑️   | Working  |
-| **macOS**   | [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                         |   ⚠️   | Planned  |
+| System      | Architecture&nbsp;&nbsp;&nbsp;                                                                                                                                     | Status | Brew | Details       |
+| :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | :--: | ------------- |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)   |   ✅   |      | Finished      |
+| **Windows** | [![Windows](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)    |   ✅   |      | Finished      |
+| **Windows** | [![Windows](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/windows-installer.exe)            |   ✅   |      | Finished      |
+| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb) |   ☑️   |  🍺  | Working       |
+| **Linux**   | [![Linux](https://img.shields.io/badge/Intel-i386-yellowgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)   |   ☑️   |      | Working       |
+| **Linux**   | [![Linux](https://img.shields.io/badge/ARM-arm64-blue)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)          |   ☑️   |  🍺  | Working       |
+| **macOS**   | [![macOS](https://img.shields.io/badge/Intel-amd64-brightgreen)](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg)       |   ☑️   |  🍺  | Working       |
+| **macOS**   | [![macOS](https://img.shields.io/badge/ARM-arm64-blue)](#)                                                                                                         |   ⚠️   |  🍺  | Homebrew Only |
 
 ### Windows 🪟
 
