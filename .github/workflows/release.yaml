@@ -4,6 +4,11 @@ on:
   release:
     types: [published]
 
+env:
+  formula: hls.rb
+  tap-owner: cssnr
+  tap-repo: homebrew-tap
+
 jobs:
   build:
     name: "Build"
@@ -99,15 +104,16 @@ jobs:
         with:
           app-id: 146360
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          owner: cssnr
-          repositories: homebrew-tap
+          owner: ${{ env.tap-owner }}
+          repositories: ${{ env.tap-repo }}
 
       - name: "Homebrew Action"
-        if: ${{ !github.event.release.prerelease }}
+        if: ${{ !github.event.release.prerelease && env.formula != '' }}
         uses: cssnr/homebrew-action@master
         with:
-          formula: hls.rb
-          repo: cssnr/homebrew-tap
+          formula: ${{ env.formula }}
+          message: Bump ${{ env.formula }} to ${{ github.ref_name }}
+          repo: ${{ env.tap-owner }}/${{ env.tap-repo }}
           token: ${{ steps.app.outputs.token }}
           version: ${{ github.ref_name }}
           calculate: false

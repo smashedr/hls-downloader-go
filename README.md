@@ -78,18 +78,18 @@ Caveats:
 - [linux-installer-amd64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-amd64.deb)
 - [linux-installer-i386.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-i386.deb)
 - [linux-installer-arm64.deb](https://github.com/smashedr/hls-downloader-go/releases/latest/download/linux-installer-arm64.deb)
-- [Homebrew](#homebrew-) (All)
+- [Homebrew](#homebrew-) (all x64)
 
-**Caveats:**
+Caveats:
 
 - Requires ffmpeg in PATH.
 
 ### macOS 🍎
 
-- [macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg) (Intel Only)
-- [Homebrew](#homebrew-) (All)
+- [macos-installer.pkg](https://github.com/smashedr/hls-downloader-go/releases/latest/download/macos-installer.pkg) (intel only)
+- [Homebrew](#homebrew-) (all)
 
-**Caveats:**
+Caveats:
 
 - Requires ffmpeg in PATH.
 - The installer does not yet support M-series (ARM).
@@ -118,7 +118,7 @@ If you already have `ffmpeg` installed.
 brew install cssnr/tap/hls --without-ffmpeg
 ```
 
-**Caveats:**
+Caveats:
 
 - You must run the commands in the Caveats after the installation.
 
